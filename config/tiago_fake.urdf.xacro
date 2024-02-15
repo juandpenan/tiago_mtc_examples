@@ -97,7 +97,7 @@
   <xacro:include filename="$(find tiago_description)/gazebo/gazebo.urdf.xacro" />
 
   <!-- ros2_control -->
-  <xacro:include filename="$(find mtc_tutorial)/config/fake_ros2_control.urdf.xacro" />
+  <xacro:include filename="$(find tiago_mtc_examples)/config/fake_ros2_control.urdf.xacro" />
   <xacro:tiago_ros2_control
     use_sim="$(arg use_sim)" />
 
