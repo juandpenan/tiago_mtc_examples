@@ -14,7 +14,7 @@
 
   <depend>rclcpp</depend>
   <depend>moveit_task_constructor_core</depend>
-  <depend>robocup_at_home_gazebo</depend>
+  <!-- <depend>robocup_at_home_gazebo</depend> -->
 
   <export>
     <build_type>ament_cmake</build_type>
