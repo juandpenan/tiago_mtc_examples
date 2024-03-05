@@ -27,7 +27,7 @@ def generate_launch_description():
             get_package_share_directory('tiago_mtc_examples'),
             'config', 'tiago_pal-gripper.srdf'))
         .robot_description_kinematics(file_path=os.path.join(
-            get_package_share_directory('tiago_mtc_examples'),
+            get_package_share_directory('tiago_moveit_config'),
             'config', 'kinematics_kdl.yaml'))
         .trajectory_execution(file_path=os.path.join(
             get_package_share_directory('tiago_mtc_examples'),
@@ -40,7 +40,7 @@ def generate_launch_description():
                                     'publish_transforms_updates': True,
         })
         .pilz_cartesian_limits(file_path=os.path.join(
-            get_package_share_directory('tiago_mtc_examples'),
+            get_package_share_directory('tiago_moveit_config'),
             'config', 'pilz_cartesian_limits.yaml'))
         .to_moveit_configs()
     )

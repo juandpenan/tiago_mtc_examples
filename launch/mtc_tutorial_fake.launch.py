@@ -14,6 +14,17 @@ from launch_pal.robot_utils import (get_arm,
                                     get_laser_model,
                                     get_robot_name,
                                     get_wrist_model)
+from launch_param_builder import ParameterBuilder
+
+
+def _octomap_launch_params(params: ParameterBuilder):
+    #params.yaml("config/sensors_kinect_pointcloud.yaml")
+    #params.yaml("config/sensors_3d.yaml")  # Done in MoveItConfigsBuilder instead.
+    params.parameter("octomap_frame", "camera_color_optical_frame")
+    params.parameter("octomap_resolution", 0.01)
+    params.parameter("max_range", 5.0)
+    return params.to_dict()
+
 
 def generate_launch_description():
     # planning_context
@@ -35,7 +46,7 @@ def generate_launch_description():
             get_package_share_directory('tiago_mtc_examples'),
             'config', 'tiago_pal-gripper.srdf'))
         .robot_description_kinematics(file_path=os.path.join(
-            get_package_share_directory('tiago_mtc_examples'),
+            get_package_share_directory('tiago_moveit_config'),
             'config', 'kinematics_kdl.yaml'))
         .trajectory_execution(file_path=os.path.join(
             get_package_share_directory('tiago_mtc_examples'),
@@ -48,10 +59,12 @@ def generate_launch_description():
                                     'publish_transforms_updates': True,
         })
         .pilz_cartesian_limits(file_path=os.path.join(
-            get_package_share_directory('tiago_mtc_examples'),
+            get_package_share_directory('tiago_moveit_config'),
             'config', 'pilz_cartesian_limits.yaml'))
         .to_moveit_configs()
     )
+
+    _params_movegroup = ParameterBuilder("tiago_moveit_config")
 
     # Load  ExecuteTaskSolutionCapability so we can execute found solutions in simulation
     move_group_capabilities = {
@@ -66,6 +79,7 @@ def generate_launch_description():
         parameters=[
             moveit_config.to_dict(),
             move_group_capabilities,
+            _octomap_launch_params(_params_movegroup)
         ],
     )
 
