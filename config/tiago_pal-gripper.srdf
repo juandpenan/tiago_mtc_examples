@@ -1034,8 +1034,28 @@
     <disable_collisions link1="wrist_ft_tool_link" link2="arm_tool_link" reason="Never" />
 
 
+    <!-- SteamDeck -->
+    <disable_collisions link1="arm_1_link" link2="steamdeck_link" reason="Never"/>
+    <disable_collisions link1="arm_5_link" link2="steamdeck_link" reason="Never"/>
+    <disable_collisions link1="arm_6_link" link2="steamdeck_link" reason="Never"/>
+    <disable_collisions link1="arm_tool_link" link2="steamdeck_link" reason="Never"/>
+    <disable_collisions link1="base_antenna_left_link" link2="steamdeck_link" reason="Never"/>
+    <disable_collisions link1="base_antenna_right_link" link2="steamdeck_link" reason="Never"/>
+    <disable_collisions link1="base_link" link2="steamdeck_link" reason="Never"/>
+    <disable_collisions link1="caster_back_left_2_link" link2="steamdeck_link" reason="Never"/>
+    <disable_collisions link1="caster_back_right_2_link" link2="steamdeck_link" reason="Never"/>
+    <disable_collisions link1="caster_front_left_2_link" link2="steamdeck_link" reason="Never"/>
+    <disable_collisions link1="caster_front_right_2_link" link2="steamdeck_link" reason="Never"/>
 
-
-
+    <disable_collisions link1="steamdeck_link" link2="wheel_left_link" reason="Never"/>
+    <disable_collisions link1="steamdeck_link" link2="wheel_right_link" reason="Never"/>
+    <disable_collisions link1="steamdeck_link" link2="wrist_ft_link" reason="Never"/>
+    <disable_collisions link1="steamdeck_link" link2="wrist_ft_tool_link" reason="Never"/>
+    <disable_collisions link1="head_1_link" link2="steamdeck_link" reason="Adjacent"/>
+    <disable_collisions link1="head_2_link" link2="steamdeck_link" reason="Never"/>
+    
+    <disable_collisions link1="torso_fixed_link" link2="steamdeck_link" reason="Never"/>
+    <disable_collisions link1="torso_fixed_column_link" link2="steamdeck_link" reason="Never"/>
+    <disable_collisions link1="torso_lift_link" link2="steamdeck_link" reason="Never"/>
 
 </robot>
