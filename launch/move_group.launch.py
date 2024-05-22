@@ -114,7 +114,10 @@ def launch_setup(context, *args, **kwargs):
 
     if use_sensor_manager:
         # moveit_sensors path
-        moveit_sensors_path = 'config/sensors_3d.yaml'
+        moveit_sensors_path = os.path.join(
+            get_package_share_directory('tiago_mtc_examples'),
+            'config',
+            'sensors_3d.yaml')
         moveit_config.sensors_3d(moveit_sensors_path)
 
     moveit_config.to_moveit_configs()
