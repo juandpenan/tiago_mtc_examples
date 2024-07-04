@@ -51,8 +51,8 @@
       <joint name="gripper_left_finger_joint" value="0.044" />
     </group_state>
     <group_state name="close" group="gripper">
-      <joint name="gripper_right_finger_joint" value="0" />
-      <joint name="gripper_left_finger_joint" value="0" />
+      <joint name="gripper_right_finger_joint" value="0.004" />
+      <joint name="gripper_left_finger_joint" value="0.004" />
     </group_state>
 
     <group_state name="offer" group="arm_torso">
